@@ -1,0 +1,285 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  /* overflow: hidden; */
+  font-family: 'Paytone One', sans-serif;
+   overflow: hidden;
+}
+
+.landing {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  color: rgb(61, 61, 61);
+ 
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 10vh;
+  min-width: 90vw;
+  z-index: 3;
+  margin: auto;
+}
+
+nav h1{
+  padding-left: 5vw;
+  cursor: pointer;
+}
+.nav-links{
+  display: flex;
+  list-style: none;
+}
+.nav-links li {
+  padding-left: 10vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+.nav-links li a {
+  color: rgb(61, 61, 61);
+  text-decoration: none;
+}
+
+.nav-links li:hover {
+  font-size: 1.6vw;
+  color: black;
+  transition: all 0.7s ease-out;
+}
+
+#logo{
+  font-size: 1.6vw;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+#logo:hover{
+  font-size: 1.7vw;
+  color: black;
+}
+
+.big-text {
+  position: absolute;
+  top: 30%;
+  left: 50vw;
+  font-size: 5vw;
+  /* font-family: "Lobster", cursive; */
+  z-index: 4;
+}
+.small-text{
+  position: absolute;
+  z-index: 4;
+  left: 40vw;
+  width: 80vw;
+  font-size: 3vw;
+}
+
+#p1{
+  top: 50%; 
+}
+#p2{
+  left: 50vw;
+  top: 60%;
+}
+
+/* imagen y video */
+#imgD {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  object-fit: cover;
+  /* añadir efecto imagen y video aparecer */
+  mix-blend-mode: lighten;
+  animation: reveal 2s ease-in 1 forwards; 
+   opacity: 0;
+}
+
+#imgM, #videoM{
+  display: none;
+}
+
+#videoD {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  /* height: 110%; */
+  width: 110%;
+  /* object-fit: cover; */
+  animation: reveal 2s ease-in 0.5 forwards; 
+  opacity: 0;
+}
+
+
+/* animaciones  */
+@keyframes reveal{
+  from{
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+} 
+
+/* @keyframes swing{
+  from{
+    transform: rotateZ(0deg);
+  }to{
+    transform: rotateZ(3deg);
+  }
+} */
+
+/* intro */
+
+ .intro {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+/* .slider {
+  background: rgb(97, 105, 109);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+}  */
+
+.intro-text {
+  color: rgb(233, 233, 233);
+  font-family: "Heebo", sans-serif;
+  font-size: 5.5vw;
+}
+
+ .hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+} 
+
+
+
+@keyframes line-anim {
+  to{
+      stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+      fill: transparent;
+  }
+  to {
+      /* fill: #e94e21; */
+      /* fill: #2b47b3; */
+      fill: black;
+  }
+}
+/*  */
+
+@media (max-width: 600px) {
+  nav {
+    background-color: white;
+    z-index: 300;
+    top: 7%;
+  }
+  #logo{
+    position: fixed;
+    min-width: 100vw;
+    top: 0%;
+    padding: 1%;
+    text-align: center;
+    /* left: 50%; */
+    /* transform: translate(-50%, 0%); */
+    font-size: 30px;
+    z-index: 300;
+    background-color: white;
+  }
+  .nav-links li a{
+    font-size: 20px;
+    background-color: white;
+  }
+  
+  .big-text {
+    display: none;
+  }
+  .small-text{
+    text-align: center;
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 80vw;
+    font-size: 10vw;
+  }
+  /* quote */
+  #p1{
+    top: 20%; 
+  }
+  #p2{
+    left: 50vw;
+    top: 35%;
+  }
+  /* imagen y video */
+#imgD, #videoD {
+  display: none;
+}
+
+#imgM, #videoM {
+  display: block;
+}
+
+#imgM {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  object-fit: cover;
+  /* añadir efecto imagen y video aparecer */
+  mix-blend-mode: lighten;
+  animation: reveal 2s ease-in 1 forwards;
+   opacity: 0;
+}
+
+#videoM {
+  position: absolute;
+  left: 0%;
+  top: 20%;
+  height: 100vh;
+
+  /* object-fit: cover; */
+  animation: reveal 0.5s ease-in 0.5 forwards;
+  opacity: 0;
+}
+
+.intro-text{
+  margin-left: 14vw;
+  font-size: 10vw;
+}
+
+}
